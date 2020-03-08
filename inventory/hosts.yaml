@@ -1,0 +1,19 @@
+---
+host1.cmh:
+    hostname: ios-xe-mgmt-latest.cisco.com
+    port: 8181
+    username: developer
+    password: C1sco12345
+    platform: ios
+    groups:
+        - cmh
+    data:
+        site: cmh
+        role: host
+        type: host
+        nested_data:
+            a_dict:
+                a: 1
+                b: 2
+            a_list: [1, 2]
+            a_string: "asdasd"

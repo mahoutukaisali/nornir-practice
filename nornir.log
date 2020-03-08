@@ -1,0 +1,254 @@
+2020-03-08 15:01:53,548 -  nornir.core -     INFO -        run() - Running task 'remote_command' with args {'command': 'show version'} on 1 hosts
+2020-03-08 15:03:55,893 -  nornir.core -     INFO -        run() - Running task 'remote_command' with args {'command': 'show version'} on 1 hosts
+2020-03-08 15:04:16,116 -  nornir.core -     INFO -        run() - Running task 'remote_command' with args {'command': 'show version'} on 1 hosts
+2020-03-08 15:04:37,586 -  nornir.core -     INFO -        run() - Running task 'remote_command' with args {'command': 'show version'} on 1 hosts
+2020-03-08 15:05:23,130 -  nornir.core -     INFO -        run() - Running task 'remote_command' with args {'command': 'show version'} on 1 hosts
+2020-03-08 15:07:27,615 -  nornir.core -     INFO -        run() - Running task 'remote_command' with args {'command': 'show version'} on 1 hosts
+2020-03-08 15:07:31,963 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2020-03-08 15:07:31,970 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/plugins/connections/napalm.py", line 49, in open
+    network_driver = get_network_driver(platform)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/base/__init__.py", line 105, in get_network_driver
+    install_name=name
+napalm.base.exceptions.ModuleImportError: Cannot import "ios-xe". Is the library installed?
+
+2020-03-08 15:35:44,688 -  nornir.core -     INFO -        run() - Running task 'remote_command' with args {'command': 'show version'} on 1 hosts
+2020-03-08 15:35:49,295 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2020-03-08 15:41:54,321 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2020-03-08 15:43:11,043 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 204, in _send_command
+    output = self.device.send_command(command)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/netmiko/base_connection.py", line 1337, in send_command
+    search_pattern
+OSError: Search pattern never detected in send_command_expect: show\ ho
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 61, in napalm_get
+    result[g] = method(**options)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 954, in get_facts
+    show_ip_int_br = self._send_command("show ip interface brief")
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 207, in _send_command
+    raise ConnectionClosedException(str(e))
+napalm.base.exceptions.ConnectionClosedException: Search pattern never detected in send_command_expect: show\ ho
+
+2020-03-08 15:44:07,430 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2020-03-08 15:45:17,017 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 204, in _send_command
+    output = self.device.send_command(command)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/netmiko/base_connection.py", line 1337, in send_command
+    search_pattern
+OSError: Search pattern never detected in send_command_expect: terminal\ wid
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 61, in napalm_get
+    result[g] = method(**options)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 952, in get_facts
+    show_ver = self._send_command("show version")
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 207, in _send_command
+    raise ConnectionClosedException(str(e))
+napalm.base.exceptions.ConnectionClosedException: Search pattern never detected in send_command_expect: terminal\ wid
+
+2020-03-08 16:05:10,809 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2020-03-08 16:05:22,792 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 61, in napalm_get
+    result[g] = method(**options)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 1004, in get_facts
+    interface = line.split()[0]
+IndexError: list index out of range
+
+2020-03-08 16:05:49,025 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {} on 1 hosts
+2020-03-08 16:05:49,026 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+TypeError: napalm_get() missing 1 required positional argument: 'getters'
+
+2020-03-08 16:19:00,398 -  nornir.core -     INFO -        run() - Running task 'basic_configuration' with args {} on 1 hosts
+2020-03-08 16:19:00,399 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'basic_configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "nornir_executer.py", line 60, in basic_configuration
+    r = task.run(task=text.template_file,
+NameError: name 'text' is not defined
+
+2020-03-08 16:19:14,382 -  nornir.core -     INFO -        run() - Running task 'basic_configuration' with args {} on 1 hosts
+2020-03-08 16:19:25,009 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'Loading Configuration on the device' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 174, in _discover_file_system
+    return self.device._autodetect_fs()
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/netmiko/cisco_base_connection.py", line 204, in _autodetect_fs
+    "system: {} {}".format(cmd, output)
+ValueError: An error occurred in dynamically determining remote file system: dir 1000v-1#
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/plugins/tasks/networking/napalm_configure.py", line 32, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 319, in load_merge_candidate
+    file_system=self.dest_file_system,
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 3429, in dest_file_system
+    self._dest_file_system = self._discover_file_system()
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 180, in _discover_file_system
+    raise CommandErrorException(msg)
+napalm.base.exceptions.CommandErrorException: Netmiko _autodetect_fs failed (to workaround specify dest_file_system in optional_args.)
+
+2020-03-08 16:19:25,010 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'basic_configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "nornir_executer.py", line 72, in basic_configuration
+    configuration=task.host["config"])
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_configure at 0x10dffbd90> (failed)
+
+
+2020-03-08 16:20:27,331 -  nornir.core -     INFO -        run() - Running task 'basic_configuration' with args {} on 1 hosts
+2020-03-08 16:20:27,334 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'Loading Configuration on the device' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+TypeError: napalm_get() missing 1 required positional argument: 'getters'
+
+2020-03-08 16:20:27,334 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'basic_configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "nornir_executer.py", line 72, in basic_configuration
+    configuration=task.host["config"])
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x10987be18> (failed)
+
+
+2020-03-08 16:21:14,101 -  nornir.core -     INFO -        run() - Running task 'basic_configuration' with args {} on 1 hosts
+2020-03-08 16:21:57,540 -  nornir.core -     INFO -        run() - Running task 'basic_configuration' with args {} on 1 hosts
+2020-03-08 16:23:10,813 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'Loading Configuration on the device' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 204, in _send_command
+    output = self.device.send_command(command)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/netmiko/base_connection.py", line 1337, in send_command
+    search_pattern
+OSError: Search pattern never detected in send_command_expect: show\ ho
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 61, in napalm_get
+    result[g] = method(**options)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 954, in get_facts
+    show_ip_int_br = self._send_command("show ip interface brief")
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 207, in _send_command
+    raise ConnectionClosedException(str(e))
+napalm.base.exceptions.ConnectionClosedException: Search pattern never detected in send_command_expect: show\ ho
+
+2020-03-08 16:23:10,814 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'basic_configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "nornir_executer.py", line 71, in basic_configuration
+    getters=["facts"])
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x114658e18> (failed)
+
+
+2020-03-08 16:23:31,313 -  nornir.core -     INFO -        run() - Running task 'basic_configuration' with args {} on 1 hosts
+2020-03-08 16:24:41,173 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'Loading Configuration on the device' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 204, in _send_command
+    output = self.device.send_command(command)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/netmiko/base_connection.py", line 1337, in send_command
+    search_pattern
+OSError: Search pattern never detected in send_command_expect: erminal\ width\ 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 61, in napalm_get
+    result[g] = method(**options)
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 952, in get_facts
+    show_ver = self._send_command("show version")
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/napalm/ios/ios.py", line 207, in _send_command
+    raise ConnectionClosedException(str(e))
+napalm.base.exceptions.ConnectionClosedException: Search pattern never detected in send_command_expect: erminal\ width\ 5
+
+2020-03-08 16:24:41,173 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'basic_configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "nornir_executer.py", line 71, in basic_configuration
+    getters=["facts"])
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x114184e18> (failed)
+
+
+2020-03-08 16:48:50,596 -  nornir.core -     INFO -        run() - Running task 'basic_configuration' with args {} on 1 hosts
+2020-03-08 16:52:57,643 -  nornir.core -     INFO -        run() - Running task 'basic_configuration' with args {} on 1 hosts
+2020-03-08 17:06:17,988 -  nornir.core -     INFO -        run() - Running task 'hi!' with args {'name': 'hi!', 'greet': 'hi'} on 1 hosts
+2020-03-08 17:06:17,989 -  nornir.core -     INFO -        run() - Running task 'bye!' with args {'name': 'bye!', 'greet': 'bye'} on 1 hosts
+2020-03-08 17:25:57,324 -  nornir.core -     INFO -        run() - Running task 'hi!' with args {'name': 'hi!', 'greet': 'hi'} on 1 hosts
+2020-03-08 17:25:57,325 -  nornir.core -     INFO -        run() - Running task 'bye!' with args {'name': 'bye!', 'greet': 'bye'} on 1 hosts
+2020-03-08 17:28:32,300 -  nornir.core -     INFO -        run() - Running task 'hi!' with args {'name': 'hi!', 'greet': 'hi'} on 1 hosts
+2020-03-08 17:28:32,301 -  nornir.core -     INFO -        run() - Running task 'bye!' with args {'name': 'bye!', 'greet': 'bye'} on 1 hosts
+2020-03-08 17:29:44,505 -  nornir.core -     INFO -        run() - Running task 'hi!' with args {'name': 'hi!', 'greet': 'hi'} on 1 hosts
+2020-03-08 17:29:44,506 -  nornir.core -     INFO -        run() - Running task 'bye!' with args {'name': 'bye!', 'greet': 'bye', 'onemore': 'byebye'} on 1 hosts
+2020-03-08 17:29:44,506 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'bye!' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+TypeError: greeter() got an unexpected keyword argument 'onemore'
+
+2020-03-08 17:30:23,480 -  nornir.core -     INFO -        run() - Running task 'hi!' with args {'name': 'hi!', 'greet': 'hi'} on 1 hosts
+2020-03-08 17:30:23,481 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'hi!' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+TypeError: greeter() missing 1 required positional argument: 'onemore'
+
+2020-03-08 17:30:23,481 -  nornir.core -     INFO -        run() - Running task 'bye!' with args {'name': 'bye!', 'greet': 'bye', 'onemore': 'byebye'} on 1 hosts
+2020-03-08 17:30:32,997 -  nornir.core -     INFO -        run() - Running task 'hi!' with args {'name': 'hi!', 'greet': 'hi'} on 1 hosts
+2020-03-08 17:30:32,998 - nornir.core.task -    ERROR -      start() - Host 'host1.cmh': task 'hi!' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/lisago/pyenv/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+TypeError: greeter() missing 1 required positional argument: 'onemore'
+
+2020-03-08 17:30:32,998 -  nornir.core -     INFO -        run() - Running task 'bye!' with args {'name': 'bye!', 'greet': 'bye', 'onemore': 'byebye'} on 1 hosts
+2020-03-08 17:31:39,844 -  nornir.core -     INFO -        run() - Running task 'hi!' with args {'name': 'hi!', 'greet': 'hi', 'onemore': 'byebye'} on 1 hosts
+2020-03-08 17:31:39,844 -  nornir.core -     INFO -        run() - Running task 'bye!' with args {'name': 'bye!', 'greet': 'bye', 'onemore': 'byebye'} on 1 hosts
+2020-03-08 17:32:15,560 -  nornir.core -     INFO -        run() - Running task 'hi!' with args {'name': 'hi!', 'greet': 'hi', 'onemore': 'byebye'} on 1 hosts
+2020-03-08 17:32:15,561 -  nornir.core -     INFO -        run() - Running task 'bye!' with args {'name': 'bye!', 'greet': 'bye', 'onemore': 'byebye'} on 1 hosts
+2020-03-08 17:32:35,443 -  nornir.core -     INFO -        run() - Running task 'hi!' with args {'name': 'hi!', 'greet': 'hi', 'onemore': 'hihi'} on 1 hosts
+2020-03-08 17:32:35,444 -  nornir.core -     INFO -        run() - Running task 'bye!' with args {'name': 'bye!', 'greet': 'bye', 'onemore': 'byebye'} on 1 hosts

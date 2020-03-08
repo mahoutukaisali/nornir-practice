@@ -1,0 +1,15 @@
+global:
+  data:
+    domain: global.local
+    asn: 1
+
+cmh:
+    groups:
+      #- cmh
+      ## Defining in which group the cmh group is belonging.
+      - global
+    data:
+        asn: 65000
+        vlans:
+          100: frontend
+          200: backend
